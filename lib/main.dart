@@ -1,42 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/screens/welcome/welcome_screen.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('First Title'),
-        ),
-        backgroundColor: Colors.white,
-        body: Column(
-          children: [
-            Text('The Question'),
-            RaisedButton(
-              child: Text('Answer 1'),
-              onPressed: answerQuestions,
-            ),
-            RaisedButton(
-              child: Text('Answer 2'),
-              onPressed: () {
-                print('Anonymous button is clicked');
-              },
-            ),
-            RaisedButton(
-              child: Text('Answer 3'),
-              onPressed: () => print('Arrow function button clicked'),
-            )
-          ],
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Auth',
+      theme: ThemeData(
+          primaryColor: Colors.deepPurple,
+          scaffoldBackgroundColor: Colors.white),
+      home: WelcomeScreen(),
     );
-  }
-
-  void answerQuestions() {
-    print('Answer button clicked');
   }
 }
